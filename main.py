@@ -1,3 +1,4 @@
+import asyncio
 import pygame
 import sys
 import random
@@ -172,13 +173,14 @@ def reset_variables():
 
 
 ###----------------------------Game Loop------------------------###
-def game_loop():
+async def main():
     """This function runs our main game loop, yippie!"""
     global frame
   
     reset_variables()
     running = True
     while running:
+        await asyncio.sleep(0)
         #Here is an instance of event handling, checking if the user wants to exit
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -204,4 +206,4 @@ def game_loop():
         clock.tick(30) #This functions helps us cap the FPS (Frames per Second)
         frame += 1 #We use this frame variable to animate our player
 
-game_loop()
+asyncio.run(main())
