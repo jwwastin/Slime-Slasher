@@ -7,7 +7,7 @@ jobs:
     name: Build for Emscripten pygbag runtime
     runs-on: ubuntu-latest
 
-    steps:s
+    steps:
     - uses: actions/checkout@v2
     - name: Checkout
       run: |
